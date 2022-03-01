@@ -16,15 +16,23 @@ html {
 
 body {
   color: #545149;
-  background-color: #f4f1ec;
+  background-color: #e9d9af;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
+  background-image: url("https://www.transparenttextures.com/patterns/always-grey.png");
+
 }
 
+.container {
+  width: 90%;
+  margin-left:auto;
+  margin-right: auto;
+  background-color: #e9d9af;
+  margin-top: 1.5em;
+  background-image: url("https://www.transparenttextures.com/patterns/always-grey.png");
+
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- #nav {
-   font-family: 'Bungee'
- }

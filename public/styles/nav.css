@@ -1,0 +1,38 @@
+#nav {
+  display:flex;
+  width: 100%;
+  font-family: 'Bungee';
+  height: 120px;
+  background-color: #4056A1;
+  color:white;
+  border-radius: 5px;
+  position: fixed;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-family: 'Bungee';
+  margin: 1.5em;
+  font-size: xxx-large;
+  
+}
+
+.write-new {
+  display: flex;  
+  flex-basis: 100%;
+  font-family: 'Source Sans Pro';
+  align-content: center;
+  margin:1.5em;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.angles {
+  flex-basis: 100%;
+  display:flex;
+  justify-content: end;
+  margin-right: 3em;
+  color:red
+}
