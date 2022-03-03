@@ -37,3 +37,17 @@ textarea#tweet-text {
 .counter {
   font-family: "Bungee";
 }
+
+#error-box {
+  border: 10px;
+  border-style: solid;
+  border-color: red;
+  height: fit-content;
+  margin: 1em
+}
+
+#error-message {
+  word-wrap: break-word;
+  margin: 1em;
+  color:red
+}

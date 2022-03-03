@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="/styles/tweet.css" type="text/css">
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script src="/scripts/composer-char-counter.js"></script>
@@ -42,9 +42,18 @@
     </header>
 
     <!-- Page-specific (main) content here -->
+
+
+
+
     <main class="container">
+      <!-- <article id="error-box">
+        <p id="error-message">
+          test
+        </p>
+      </article> -->
       <section class="new-tweet">
-        <form action="/tweets" method="post">
+        <form id="new-tweet" action="/tweets" method="post">
           <label for="tweet-text"></label>
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <div class="btn-counter">
@@ -54,23 +63,11 @@
         </form>
       </section>
 
-      <article class="tweet">
-        <header class="tweet-header">
-          <img src="https://i.imgur.com/73hZDYK.png">
-            <span class="name">Rhoda Jacobs</span> 
-          <span class="handle">@SirIsacc</span>
-        </header>
-        <p class="tweet-body">
-          test
-        </p>
-        <footer class="tweet-footer">
-          <span>10 days</span>
-          <span class="icons"><i class="fa-solid fa-flag"></i>&ensp;<i class="fa-solid fa-retweet"></i>&ensp;<i class="fa-solid fa-heart"></i></span>
-        </footer>
 
-      </article>
+<div class="tweet-contain"></div>
+ 
 
-
+      
       </main>
   </body>
 </html>
