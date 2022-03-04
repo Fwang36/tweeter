@@ -1,4 +1,5 @@
-/* styles for under desktop screen size */
+/* styles for under desktop screen size 
+styles for the compose tweet area */
 
 .new-tweet {
   justify-content: center;
@@ -50,13 +51,15 @@ textarea#tweet-text {
   border-style: solid;
   border-color: red;
   height: fit-content;
-  margin: 1em
+  margin: 1em;
+  font-size: smaller;
 }
 
 #error-message {
   word-wrap: break-word;
   margin: 1em;
-  color:red
+  color:red;
+  font-size: smaller;
 }
 
 /* style changes for screens over 1024px */
