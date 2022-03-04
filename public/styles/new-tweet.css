@@ -1,6 +1,9 @@
+/* styles for under desktop screen size */
+
 .new-tweet {
   justify-content: center;
   align-content: center;
+  padding-top: 1.5em;
 }
 
 #tweet-text {
@@ -28,6 +31,10 @@ textarea#tweet-text {
   border: 0px;
 }
 
+.tweet-btn:hover {
+  cursor: pointer;
+}
+
 
 .btn-counter {
   display:flex;
@@ -51,3 +58,25 @@ textarea#tweet-text {
   margin: 1em;
   color:red
 }
+
+/* style changes for screens over 1024px */
+
+@media screen and (min-width: 1024px) {
+  .new-tweet {
+    padding-top: 5.5em
+
+  }
+}
+
+@media screen and (min-width:350px) {
+  #tweet-text::placeholder {
+    font-size:x-large;
+    
+  }
+}
+/* 
+@media screen and (max-width: 768px) {
+  .new-tweet {
+    padding-top: 1.5em;
+  }
+} */

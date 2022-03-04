@@ -1,20 +1,37 @@
+/* styles for under desktop screen size 
+styles for header under nav bar */
+
 #head {
-  height: 400px;
   width: 100%;
-  background-color: #e9d9af;
-  background-image: url("https://www.transparenttextures.com/patterns/always-grey.png");
+  background-color: #fcd268;
 }
 
 #avatar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: initial;
-  padding-top: 5.5em;
+  text-align: center;
+  padding-top: 3em;
   flex-direction: column;
  
 }
 
+#avatar img {
+  padding: 2em;
+  padding-bottom:1em;
+  background-color: #fcd268;
+}
+
 h2 {
   margin:0em;
+  padding-bottom: 1em;
+}
+
+/*style change when screen exceeds 1024px */
+
+@media screen and (min-width: 1024px) {
+  #head {
+    width:40%;
+    margin-left: 1em;
+    padding-top: 7.5em;
+    background-color: #e9d9af;
+    background-image: url("https://www.transparenttextures.com/patterns/always-grey.png");
+  }
 }

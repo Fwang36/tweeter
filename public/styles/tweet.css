@@ -63,3 +63,6 @@
 .tweet-body {
   word-wrap: break-word;
 }
+
+
+@media screen and (min-width:350px;)

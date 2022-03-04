@@ -3,42 +3,28 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-
-
-// const users = {
-//   "user": {
-//     "name": "Newton",
-//     "avatars": "https://i.imgur.com/73hZDYK.png",
-//     "handle": "@SirIsaac"
-
-//     },
-//   "content": {
-//       "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//   "created_at": 1461116232227
-// }
-
-
 $(() => {
-
+  // escape function for safe html
   const escapeFunc = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML
   }
+
+  //create new tweet and prepend to container
   $("#new-tweet").submit(function(event) {
     event.preventDefault();
     $("#error-box").slideUp(200)
     
-    if (!document.getElementById("tweet-text").value) {
+    if (!document.getElementById("tweet-text").value) {  //error if only 1 character
       errorMessage("Please Enter at Least 1 Character")
       return;
     }
-    if (document.getElementById("tweet-text").value.length > 140) {
+    if (document.getElementById("tweet-text").value.length > 140) {  //error if over 140 characters
      errorMessage("Please Enter Under 140 Characters")
       return;
     }
-    $("#tweet-text").val(escapeFunc($("#tweet-text").val()))
+    $("#tweet-text").val(escapeFunc($("#tweet-text").val()))  //convert to safe html
     
     const serializedEvent = $(event.target).serialize()
     const safeHTML = escapeFunc(serializedEvent);
@@ -46,7 +32,7 @@ $(() => {
     $.ajax( {
       type: "POST",
       url: "/tweets",
-      data: escapeFunc(serializedEvent),
+      data: escapeFunc(serializedEvent),          //create post request and upon success, will prepend tweet to container
       datatype: "json",
       success: function() {
         $.ajax({
@@ -59,16 +45,21 @@ $(() => {
         })
       }
     })
+
+    event.target['2'].innerHTML = "140" //reset character counter to 140
+
   })
 
   const loadTweets = function() {
-    $.ajax("/tweets", { method: "GET"})
-    .then(function (tweets) {
+    $.ajax("/tweets", { method: "GET"})   //Load all tweets on start
+    .then(function (tweets) { 
       renderTweets(tweets)
     })
   }
   loadTweets()
-  const createTweetElement = function(tweetData) {
+
+  //creates new tweet article based on form submission
+  const createTweetElement = function(tweetData) { 
     const $tweet = $(`<article class="tweet"></article>`)
 
     const $header = $(`<header class="tweet-header"></header>`)
@@ -99,16 +90,16 @@ $(() => {
 
   }
 
-  const newTweet = function() {
-    createTweetElement();  
-  }
 
+  //function to be called to render all tweets in database
   const renderTweets = function(db) {
     for (entry of db) {
       createTweetElement(entry)
     }
   };
 
+
+  //error messages to be displayed when character counts are invalid
   const errorMessage = function(err) {
     const $error = $(`<article id="error-box"></article>`)
     const $errorMessage = $(`<p id="error-message"><i class="fa-solid fa-triangle-exclamation"></i><strong>${err}</strong><i class="fa-solid fa-triangle-exclamation"></i></p>`)

@@ -22,19 +22,24 @@
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script src="/scripts/composer-char-counter.js"></script>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
 
   </head>
 
   <body>
+
+    <a id="compose"></a>
     <!-- Top nav bar (fixed) -->
     <nav id="nav">
       <span class="title">tweeter</span>
-      <span class="write-new"><b>Write&nbsp;</b> a new tweet
-        <span class="angles"><i class="fa-solid fa-angles-down"></i></span></span>
+      <span class="write-new"><a  class="link" href="#compose"><b>Write&nbsp;</b> a new tweet</a>
+      <span class="angles"><a class="link" href="#compose"><i class="fa-solid fa-angles-down"></i></a></span>
       
     </nav>
-
+    <div id="page">
     <header id="head">
+
       <div id="avatar">
           <img src="/images/profile-hex.png"> 
           <h2>Your Name</h2>
@@ -42,17 +47,8 @@
     </header>
 
     <!-- Page-specific (main) content here -->
-
-
-
-
-    <main class="container">
-      <!-- <article id="error-box">
-        <p id="error-message">
-          test
-        </p>
-      </article> -->
-      <section class="new-tweet">
+    <main class="container">      
+        <section class="new-tweet">
         <form id="new-tweet" action="/tweets" method="post">
           <label for="tweet-text"></label>
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
@@ -63,11 +59,9 @@
         </form>
       </section>
 
+    <!--Tweets appended below in reverse container-->
+      <div class="tweet-contain"></div> 
 
-<div class="tweet-contain"></div>
- 
-
-      
-      </main>
+    </main>
   </body>
 </html>

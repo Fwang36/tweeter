@@ -1,3 +1,6 @@
+/* styles for under desktop screen size 
+styles for nav bar */
+
 #nav {
   display:flex;
   width: 100%;
@@ -35,4 +38,27 @@
   justify-content: end;
   margin-right: 3em;
   color:red
+}
+
+.link {
+  color:inherit;
+  text-decoration: none;
+}
+
+/* style changes for screens over 1024px */
+
+@media screen and (max-width:1024px) {
+  #nav {
+    background-color: #fcd268;
+  }
+
+  .title {
+    margin:.5em;
+    font-size:x-large;
+  }
+
+  .write-new {
+    margin:.5em;
+    font-size: large;
+  }
 }
