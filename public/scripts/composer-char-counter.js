@@ -20,4 +20,15 @@ $(() => {
     e.target.form['2'].innerHTML = counter - $("#tweet-text").val().length
    }, 100)
   })
+
+//Changes character count on backspace
+  $("#tweet-text").keyup(function(e) {
+    if (e.keyCode == 8) {
+      setTimeout(function() {
+        console.log(e.target.form['2'].innerHTML)
+        let counter = 140
+        e.target.form['2'].innerHTML = counter - $("#tweet-text").val().length
+      }, 100)
+    }
+  })
 });
