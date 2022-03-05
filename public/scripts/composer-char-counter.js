@@ -16,7 +16,6 @@ $(() => {
   $("#tweet-text").on("paste",function(e) {
    setTimeout(function() {
     let counter = 140
-    console.log($("#tweet-text").val().length)
     e.target.form['2'].innerHTML = counter - $("#tweet-text").val().length
    }, 100)
   })
@@ -25,7 +24,6 @@ $(() => {
   $("#tweet-text").keyup(function(e) {
     if (e.keyCode == 8) {
       setTimeout(function() {
-        console.log(e.target.form['2'].innerHTML)
         let counter = 140
         e.target.form['2'].innerHTML = counter - $("#tweet-text").val().length
       }, 100)
