@@ -44,7 +44,7 @@ $(() => {
         });
       }
     });
-
+    $("#tweet-text").val("");            //clear text box after successful submission
     event.target['2'].innerHTML = "140"; //reset character counter to 140
 
   });
